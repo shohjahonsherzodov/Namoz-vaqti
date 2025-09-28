@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens for Night Kaaba theme */
+  --background: #1c1c1c;
+  --foreground: #ffffff;
+  --card: #2a2a2a;
+  --card-foreground: #f0f0f0;
+  --popover: #2a2a2a;
+  --popover-foreground: #d4af37;
+  --primary: #d4af37;
+  --primary-foreground: #1c1c1c;
+  --secondary: #27ae60;
+  --secondary-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #f0f0f0;
+  --accent: #d4af37;
+  --accent-foreground: #1c1c1c;
+  --destructive: #be123c;
+  --destructive-foreground: #ffffff;
+  --border: #444444;
+  --input: #2a2a2a;
+  --ring: #d4af37;
+  --chart-1: #27ae60;
+  --chart-2: #d4af37;
+  --chart-3: #1c1c1c;
+  --chart-4: #f0f0f0;
+  --chart-5: #444444;
+  --radius: 0.5rem;
+  --sidebar: #1c1c1c;
+  --sidebar-foreground: #d4af37;
+  --sidebar-primary: #2a2a2a;
+  --sidebar-primary-foreground: #d4af37;
+  --sidebar-accent: #27ae60;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #444444;
+  --sidebar-ring: #d4af37;
+}
+
+.dark {
+  /* Dark mode uses same colors as root for consistent Night Kaaba theme */
+  --background: #1c1c1c;
+  --foreground: #ffffff;
+  --card: #2a2a2a;
+  --card-foreground: #f0f0f0;
+  --popover: #2a2a2a;
+  --popover-foreground: #d4af37;
+  --primary: #d4af37;
+  --primary-foreground: #1c1c1c;
+  --secondary: #27ae60;
+  --secondary-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #f0f0f0;
+  --accent: #d4af37;
+  --accent-foreground: #1c1c1c;
+  --destructive: #be123c;
+  --destructive-foreground: #ffffff;
+  --border: #444444;
+  --input: #2a2a2a;
+  --ring: #d4af37;
+  --chart-1: #27ae60;
+  --chart-2: #d4af37;
+  --chart-3: #1c1c1c;
+  --chart-4: #f0f0f0;
+  --chart-5: #444444;
+  --sidebar: #1c1c1c;
+  --sidebar-foreground: #d4af37;
+  --sidebar-primary: #2a2a2a;
+  --sidebar-primary-foreground: #d4af37;
+  --sidebar-accent: #27ae60;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #444444;
+  --sidebar-ring: #d4af37;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: url("/images/quran-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(28, 28, 28, 0.7);
+    backdrop-filter: blur(1px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      background-attachment: scroll;
+      background-position: center top;
+    }
+  }
+}
+
+/* Added custom styles for Islamic theme */
+.islamic-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(212, 175, 55, 0.1) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.text-shadow-gold {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
